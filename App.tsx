@@ -10,6 +10,8 @@ import { createStore } from 'redux';
 const Stack = createNativeStackNavigator();
 const store = createStore(rootReducer);
 
+export type RootState = ReturnType<typeof store.getState>
+
 export default function App() {
   return (
     <Provider store={store}>

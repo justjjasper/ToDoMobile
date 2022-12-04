@@ -1,5 +1,5 @@
-const defaultState = {
-  todo: []
+const defaultState: {todo: { name: string, done: boolean}[] } = {
+  todo: [ {name: 'Eat my shorts', done: false}, {name: 'Do not eat donuts', done: false} ]
 }
 
 const ACTIONS = {
