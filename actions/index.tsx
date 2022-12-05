@@ -5,3 +5,9 @@ export const addToDo = () => {
     type: ACTIONS.ADDTODO
   }
 }
+
+export const toggleModal = () => {
+  return {
+    type: ACTIONS.TOGGLEMODAL
+  }
+}

@@ -1,9 +1,12 @@
+import { AnyAction } from 'redux';
+
 const defaultState: {todo: { name: string, done: boolean}[] } = {
   todo: [ {name: 'Eat my shorts', done: false}, {name: 'Do not eat donuts', done: false} ]
 }
 
 export const ACTIONS = {
-  ADDTODO: 'Add ToDo'
+  ADDTODO: 'Add ToDo',
+  TOGGLEMODAL: 'Toggle Modal'
 }
 
 export const toDoReducer = (state = defaultState.todo, action: any) => {
@@ -15,3 +18,11 @@ export const toDoReducer = (state = defaultState.todo, action: any) => {
   }
 }
 
+export const modalReducer = (state = false, action: AnyAction) => {
+  switch (action.type) {
+    case ACTIONS.TOGGLEMODAL:
+      return !state
+    default:
+      return state
+  }
+}

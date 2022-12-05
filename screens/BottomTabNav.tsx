@@ -2,10 +2,14 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import ToDoScreen from './ToDoScreen/ToDoScreen';
 import SpareScreen from './SpareScreen';
 import { Button } from 'react-native';
+import { useDispatch } from 'react-redux'
+import { toggleModal } from '../actions';
 
 const Bottom = createBottomTabNavigator();
 
 export default function BottomTabNav () {
+  const dispatch = useDispatch();
+
   return (
     <Bottom.Navigator>
       <Bottom.Screen
@@ -14,7 +18,7 @@ export default function BottomTabNav () {
         options={{
           headerRight: () => (
             <Button
-            onPress={() => alert('This is a button')}
+            onPress={() => dispatch(toggleModal())}
             title="Button"
             color="blue"
             />
