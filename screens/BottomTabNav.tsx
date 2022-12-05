@@ -2,6 +2,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import ToDoScreen from './ToDoScreen/ToDoScreen';
 import SpareScreen from './SpareScreen';
 import { Button } from 'react-native';
+
 const Bottom = createBottomTabNavigator();
 
 export default function BottomTabNav () {
