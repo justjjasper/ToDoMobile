@@ -4,11 +4,12 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../App'
 import ToDoTemplate from './ToDoTemplate';
 import ButtonScreen from './ButtonScreen';
+import ToDoModal from './ToDoModal';
 
 const Stack = createNativeStackNavigator();
 
 export default function ToDoScreen() {
-  const toDoList = useSelector<RootState, any>(state => state.toDo)
+  const toDoList = useSelector<RootState, {name: string, done: boolean}[]>(state => state.toDo)
 
   if (toDoList.length === 0) {
     return (
@@ -27,7 +28,6 @@ export default function ToDoScreen() {
             key={i}
             children= { ()=> <ToDoTemplate task={task}/> }/>
         ))}
-
     </Stack.Navigator>
   )
 }

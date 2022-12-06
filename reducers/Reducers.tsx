@@ -18,9 +18,10 @@ export const toDoReducer = (state = defaultState.todo, action: any) => {
   }
 }
 
-export const modalReducer = (state = false, action: AnyAction) => {
+export const modalReducer = (state: boolean = false, action: AnyAction) => {
   switch (action.type) {
     case ACTIONS.TOGGLEMODAL:
+      console.log('what is sate', state)
       return !state
     default:
       return state
